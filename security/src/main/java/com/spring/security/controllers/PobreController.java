@@ -1,8 +1,8 @@
 package com.spring.security.controllers;
 
 
-import com.spring.security.models.PessoaModel;
-import com.spring.security.repositories.PessoaRepository;
+import com.spring.security.models.PobreModel;
+import com.spring.security.repositories.PobreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,18 +13,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/pessoas")
-public class PessoaController {
+public class PobreController {
 
     @Autowired
-    private PessoaRepository pessoaRepository;
+    private PobreRepository pobreRepository;
 
     @GetMapping
-    public List<PessoaModel> findall() {
-        return pessoaRepository.findAll();
+    public List<PobreModel> findall() {
+        return pobreRepository.findAll();
     }
 
     @PostMapping
-    public PessoaModel criarPessoa(PessoaModel pessoaModel) {
-        return pessoaRepository.save(pessoaModel);
+    public PobreModel criarPessoa(PobreModel pobreModel) {
+        return pobreRepository.save(pobreModel);
     }
 }
